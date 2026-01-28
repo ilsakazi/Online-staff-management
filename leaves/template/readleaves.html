@@ -1,0 +1,48 @@
+{% extends 'dash.html'%}
+{% load static %}
+{% block content %}
+<style>
+    table,tr
+    {
+     border: groove;
+     }
+</style>
+<br>
+<br>
+<div class="container">
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="border:1px solid black;">No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact No</th>
+            <th>Reason to take leave</th>
+            <th>Application</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+<tbody>
+    {% for leaves in l %}
+        <tr>
+            <td style="border:groove;">{{forloop.counter}}</td>
+            <td>{{leaves.name}}</td>
+            <td>{{leaves.email}}</td>
+            <td>{{leaves.cno}}</td>
+            <td>{{leaves.msg}}</td>
+            <td><img src="/media/{{leaves.image}}" height="100px" width="100px" border="1px solid black"></td>
+            <td>
+                <a href="/l/updateleaves/{{leaves.id}}/" class="btn btn-success" style="height:36px; width:75px;">Edit</a>
+                <a href="/l/deleteleaves/{{leaves.id}}/" class="btn btn-secondary" style="height:36px; width:75px;">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<center>
+    <a href="/l/leaves/" class="btn btn-secondary">Add new Records</a>
+</center>
+</div>
+{% endblock %}

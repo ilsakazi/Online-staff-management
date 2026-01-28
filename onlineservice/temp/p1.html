@@ -1,0 +1,113 @@
+{% extends 'dash.html'%}
+{% load static %}
+{% block content %}
+<style>
+* {
+  box-sizing: border-box;
+}
+.card-container {
+  float: left;
+  padding: 25px;
+  width: 350px;
+  height: 390px;
+  border-radius: 25px;
+  border: 25px solid white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+img {
+  border-radius: 5px 5px 0 0;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: skyblue;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+</style>
+
+<!--<div class="modal-dialog modal-fullscreen-xl-down">-->
+<br>
+
+<div class="clearfix">
+
+  <div class="card-container">
+  <img src="{% static '21.jpeg' %}" alt="Mountains" class="rounded-circle" style="width:45%">
+  <div class="col-md-17" style="float:left;">
+    <h4 style="text-align: left;">Sheenu Singh</h4>
+        <p class="text-muted"></p>
+        <div style="text-align: justify;">
+            <div style="text-align: left;">
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Senior Professor</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Assistant Professor</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">10 + years of experience.</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Phone: 1234567890</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt;">Email: sheenusingh@ljku.edu.in</span>
+            </div>
+        </div>
+  </div>
+</div>
+  <div class="card-container">
+  <img src="{% static '19.jpeg' %}" alt="Mountains" class="rounded-circle" style="width:45%">
+  <div class="col-md-17">
+    <h4 style="text-align: left;">Kamiya Sharma</h4>
+        <p class="text-muted"></p>
+        <div style="text-align: justify;">
+            <div style="text-align: left;">
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Senior Professor</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Assistant Professor</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">10 + years of experience.</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Phone: 1234567890</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt;">Email: kamiyasharma@ljku.edu.in</span>
+            </div>
+        </div>
+  </div>
+  </div>
+  <div class="card-container">
+  <img src="{% static '16.jpeg' %}" alt="Mountains" class="rounded-circle" style="width:45%">
+  <div class="col-md-17">
+    <h4 style="text-align: left;">Sona Gadani</h4>
+        <p class="text-muted"></p>
+        <div style="text-align: justify;">
+            <div style="text-align: left;">
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Senior Professor</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Assistant Professor</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">8 + years of experience.</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt; letter-spacing: 0.466667px;">Phone: 1234567890</span><br>
+                <span style="color:gray; font-family: &quot;Times New Roman&quot;, serif; font-size: 11pt;">Email: sonagadani@ljku.edu.in</span>
+            </div>
+        </div>
+  </div>
+  </div>
+<br>
+<!--<a href="/p2/" class="previous round">&#8249;</a>
+<a href="/p3/" class="next round">&#8250;</a>-->
+<center>
+<a href="/profile/" class="previous">&laquo; Previous</a>
+<a href="/p2/" class="next">Next &raquo;</a>
+</center>
+{% endblock %}

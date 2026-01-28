@@ -1,0 +1,63 @@
+{% extends 'dash.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+
+<div class="container">
+
+  <form method="post" action="/l/readleaves/" enctype="multipart/form-data" class="row g-3 needs-validation">
+    {% csrf_token %}
+
+    <div class="col-md-4">
+      <label class="form-label"><b>Name</b></label>
+      <input type="text" class="form-control" aria-describedby="nameHelp" name="name" placeholder="Enter Name" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label class="form-label"><b>Email</b></label>
+      <input type="email" class="form-control" aria-describedby="emailHelp" name="email" placeholder="Enter Email Address" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label class="form-label"><b>Contact Number</b></label>
+      <input type="text" class="form-control" aria-describedby="cnoHelp" name="cno" placeholder="Enter Contact number" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label class="form-label"><b>Reason to take leave</b></label>
+      <textarea class="form-control" rows="4" name="msg" placeholder="Enter your reason to take leave..." required></textarea>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label class="form-label"><b>Application</b></label>
+      <input type="file" class="form-control" name="image" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-3">
+      <center>
+        <button type="submit" class="btn btn-success" style="width: 200px;"><b>Submit</b></button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn btn-secondary" style="width: 200px;"><b>Cancel</b></button>
+      </center>
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}

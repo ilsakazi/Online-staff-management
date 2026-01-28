@@ -1,0 +1,90 @@
+{% extends 'dash.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .container {
+        margin-top: 20px;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+    }
+
+    .btn-submit {
+        height: 38px;
+        width: 200px;
+    }
+
+    .btn-cancel {
+        height: 38px;
+        width: 200px;
+        margin-right: 10px;
+    }
+
+    .preview-image {
+        margin-top: 10px;
+    }
+</style>
+<br>
+<br>
+<div class="container">
+
+    <form method="post" action="/l/updateleaves/{{ l.id }}/" enctype="multipart/form-data" class="row g-3 needs-validation">
+        {% csrf_token %}
+
+        <div class="col-md-4">
+            <label for="name"><b>Name</b></label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ l.name }}" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="email"><b>Email</b></label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ l.email }}" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="cno"><b>Contact Number</b></label>
+            <input type="text" class="form-control" id="cno" name="cno" value="{{ l.cno }}" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <label for="msg"><b>Reason to take leave</b></label>
+            <input type="text" class="form-control" id="msg" name="msg" value="{{ l.msg }}" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <label for="image"><b>Application</b></label>
+            <input type="file" id="image" name="image" class="form-control">
+            <p class="preview-image">
+                {% if l.image %}
+                    <img src="{{ l.image.url }}" alt="Application Image" height="300px" width="300px">
+                {% endif %}
+            </p>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+<br>
+        <br>
+        <center>
+            <div>
+                <button type="submit" class="btn btn-success btn-submit"><b>Submit</b></button>
+                <button type="reset" class="btn btn-secondary btn-cancel"><b>Cancel</b></button>
+            </div>
+        </center>
+
+    </form>
+</div>
+{% endblock %}

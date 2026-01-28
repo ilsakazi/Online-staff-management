@@ -1,0 +1,104 @@
+{% extends 'dash.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .container {
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+
+    .mb-3 {
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e3f2fd;;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+
+   button {
+        margin-top: 10px; /* Add some spacing above the buttons */
+    }
+</style>
+
+<div class="container">
+
+    <form method="post" action="/read/" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <b><label>Name</label></b>
+            <input type="text" class="form-control" aria-describedby="nameHelp" name="name" placeholder="Enter name">
+        </div>
+
+        <div class="mb-3">
+        <b><label>Profile</label></b>
+        <input type="file" class="form-control" name="image">
+    </div>
+
+    <div class="mb-3">
+        <b><label>Room No</label></b>
+        <input type="text" class="form-control" name="roomno" placeholder="Enter RoomNo">
+    </div>
+
+    <div class="mb-3">
+        <b><label>Division</label></b>
+        <select name="div" id="div" class="form-control">
+        <optgroup label="Division">
+        <option value="IMCA-A">IMCA-A</option>
+        <option value="IMCA-B">IMCA-B</option>
+        <option value="IMCA-C">IMCA-C</option>
+        <option value="IMCA-D">IMCA-D</option>
+        <option value="IMCA-E">IMCA-E</option>
+        <option value="IMCA-F">IMCA-F</option>
+        </optgroup>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <b><label>Semester</label></b>
+        <select name="sem" id="sem" class="form-control">
+        <optgroup label="Semester">
+        <option value="Sem-1">Sem-1</option>
+        <option value="Sem-2">Sem-2</option>
+        <option value="Sem-3">Sem-3</option>
+        <option value="Sem-4">Sem-4</option>
+        <option value="Sem-5">Sem-5</option>
+        <option value="Sem-6">Sem-6</option>
+        </optgroup>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <b><label>Subject</label></b>
+        <input type="text" class="form-control" name="subject" placeholder="Enter Subject">
+    </div>
+        <!-- Other form fields... -->
+
+        <div>
+            <button type="submit" class="btn btn-success"><b>Submit</b></button>
+            <button type="reset" class="btn btn-dark"><b>Cancel</b></button>
+        </div>
+    </form>
+</div>
+
+<center>
+    <a href="/read/" class="btn btn-secondary"><i>Show All Records</i></a>
+</center>
+
+{% endblock %}
